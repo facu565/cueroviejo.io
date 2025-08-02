@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuero Viejo - Tienda</title>
+  <style>
+    :root {
+      --marron-cuero: #5A3E2B;
+      --beige-calido: #E6D3B3;
+      --terracota: #C97D5D;
+      --verde-oliva: #6C7A4C;
+      --negro-humo: #2B2B2B;
+      --blanco-hueso: #F9F5EF;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: var(--blanco-hueso);
+      color: var(--negro-humo);
+    }
+    header {
+      background: var(--marron-cuero);
+      color: var(--blanco-hueso);
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+    }
+    header h1 { margin: 0; font-size: 2rem; }
+    nav a {
+      color: var(--blanco-hueso);
+      margin: 0 10px;
+      text-decoration: none;
+    }
+    nav a:hover { color: var(--beige-calido); }
+
+    /* Hero */
+    .hero {
+      background: url('img/hero.jpg') center/cover no-repeat;
+      text-align: center;
+      padding: 120px 20px;
+      color: var(--blanco-hueso);
+    }
+    .hero h2 { font-size: 2.5rem; }
+    .btn {
+      background: var(--terracota);
+      color: var(--blanco-hueso);
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .btn:hover { background: var(--verde-oliva); }
+
+    /* Tienda */
+    .tienda {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .productos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .producto {
+      background: var(--beige-calido);
+      border-radius: 10px;
+      padding: 20px;
+      width: 250px;
+    }
+    .producto img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .producto h3 { margin: 10px 0; }
+    .price { color: var(--verde-oliva); font-weight: bold; }
+
+    /* Carrito */
+    .carrito {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--terracota);
+      color: var(--blanco-hueso);
+      padding: 10px 15px;
+      border-radius: 8px;
+    }
+
+    /* Nosotros */
+    .nosotros {
+      background: var(--verde-oliva);
+      color: var(--blanco-hueso);
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    /* Contacto */
+    .contacto {
+      background: var(--marron-cuero);
+      color: var(--blanco-hueso);
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .contacto form {
+      max-width: 400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .contacto input, .contacto textarea {
+      padding: 12px;
+      border: 1px solid var(--verde-oliva);
+      border-radius: 6px;
+    }
+    .contacto button {
+      background: var(--terracota);
+      color: var(--blanco-hueso);
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .contacto button:hover { background: var(--beige-calido); color: var(--negro-humo); }
+
+    /* Footer */
+    footer {
+      background: var(--negro-humo);
+      color: var(--beige-calido);
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Cuero Viejo</h1>
+  <nav>
+    <a href="#tienda">Tienda</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<div class="carrito">
+  🛒 Carrito: <span id="count">0</span> items | Total: $<span id="total">0</span>
+</div>
+
+<section class="hero">
+  <h2>Chalecos y Tops de Cuero</h2>
+  <p>Hechos a mano con esencia serrana</p>
+  <a href="#tienda" class="btn">Ver Tienda</a>
+</section>
+
+<section id="tienda" class="tienda">
+  <h2>Nuestros Productos</h2>
+  <div class="productos">
+    <div class="producto">
+      <img src="img/chaleco1.jpg" alt="Chaleco Luna">
+      <h3>Chaleco Luna</h3>
+      <p class="price">$25000</p>
+      <button class="btn" onclick="agregar(25000)">Agregar</button>
+    </div>
+    <div class="producto">
+      <img src="img/top1.jpg" alt="Top Gala">
+      <h3>Top Gala</h3>
+      <p class="price">$18000</p>
+      <button class="btn" onclick="agregar(18000)">Agregar</button>
+    </div>
+    <div class="producto">
+      <img src="img/chaleco2.jpg" alt="Chaleco Sol">
+      <h3>Chaleco Sol</h3>
+      <p class="price">$25000</p>
+      <button class="btn" onclick="agregar(25000)">Agregar</button>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros" class="nosotros">
+  <h2>Nosotros</h2>
+  <p>En Cuero Viejo confeccionamos prendas únicas con cuero genuino, inspiradas en la esencia serrana y el espíritu artesanal.</p>
+</section>
+
+<section id="contacto" class="contacto">
+  <h2>Contacto</h2>
+  <form>
+    <input type="text" placeholder="Tu nombre">
+    <input type="email" placeholder="Tu correo">
+    <textarea placeholder="Tu mensaje"></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2025 Cuero Viejo | Hecho a mano en Córdoba</p>
+</footer>
+
+<script>
+  let count = 0;
+  let total = 0;
+  function agregar(precio) {
+    count++;
+    total += precio;
+    document.getElementById('count').textContent = count;
+    document.getElementById('total').textContent = total;
+  }
+</script>
+
+</body>
+</html>
