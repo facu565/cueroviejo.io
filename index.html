@@ -27,7 +27,7 @@
       position: sticky;
       top: 0;
     }
-    header h1 { margin: 0; font-size: 2rem; }
+    header img { height: 60px; }
     nav a {
       color: var(--blanco-hueso);
       margin: 0 10px;
@@ -37,7 +37,7 @@
 
     /* Hero */
     .hero {
-      background: url('img/hero.jpg') center/cover no-repeat;
+      background: url('img/hero.png') center/cover no-repeat;
       text-align: center;
       padding: 120px 20px;
       color: var(--blanco-hueso);
@@ -56,15 +56,9 @@
     .btn:hover { background: var(--verde-oliva); }
 
     /* Tienda */
-    .tienda {
-      padding: 50px 20px;
-      text-align: center;
-    }
+    .tienda { padding: 50px 20px; text-align: center; }
     .productos {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;
     }
     .producto {
       background: var(--beige-calido);
@@ -72,10 +66,7 @@
       padding: 20px;
       width: 250px;
     }
-    .producto img {
-      max-width: 100%;
-      border-radius: 8px;
-    }
+    .producto img { max-width: 100%; border-radius: 8px; }
     .producto h3 { margin: 10px 0; }
     .price { color: var(--verde-oliva); font-weight: bold; }
 
@@ -97,6 +88,7 @@
       padding: 50px 20px;
       text-align: center;
     }
+    .nosotros img { max-width: 120px; margin-bottom: 20px; }
 
     /* Contacto */
     .contacto {
@@ -106,11 +98,8 @@
       text-align: center;
     }
     .contacto form {
-      max-width: 400px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+      max-width: 400px; margin: 0 auto;
+      display: flex; flex-direction: column; gap: 15px;
     }
     .contacto input, .contacto textarea {
       padding: 12px;
@@ -139,7 +128,7 @@
 <body>
 
 <header>
-  <h1>Cuero Viejo</h1>
+  <img src="img/logo.png" alt="Cuero Viejo Logo">
   <nav>
     <a href="#tienda">Tienda</a>
     <a href="#nosotros">Nosotros</a>
@@ -182,6 +171,7 @@
 </section>
 
 <section id="nosotros" class="nosotros">
+  <img src="img/logo.png" alt="Logo Cuero Viejo">
   <h2>Nosotros</h2>
   <p>En Cuero Viejo confeccionamos prendas únicas con cuero genuino, inspiradas en la esencia serrana y el espíritu artesanal.</p>
 </section>
